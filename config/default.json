@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://shehzad_rana:shehzad123@cluster0.nkiky.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://shehzad_rana:shehzad123@cluster0.nkiky.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret":"mysecrettoken"
 }
