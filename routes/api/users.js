@@ -4,9 +4,11 @@ const { check, validationResult } = require("express-validator");
 const User = require("../../models/User");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
+
 // @route   POST api/users
 // @desc    Register User
 // @access  Public
+
 router.post(
   "/",
   [
