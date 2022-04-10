@@ -69,7 +69,6 @@ router.post(
     if (githubusername) profileFields.githubusername = githubusername;
     if (experience) profileFields.experience = experience;
     if (education) profileFields.education = education;
-    // if (date) profileFields.date = date;
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
     if (twitter) profileFields.social.twitter = twitter;
@@ -108,6 +107,25 @@ router.get('/', async (req, res) => {
     const profiles = await Profile.find().populate('user', ['name', 'avatar']);
     res.json(profiles);
   } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route    GET api/profile/user/:user_id
+// @desc     Get Profile by user_id
+// @access   Public
+router.get('/user/:user_id', async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar']);
+    res.json(profile);
+    if (!profile) return res.status(400).json({ msg: 'Profile not found' })
+
+  } catch (err) {
+    if (err.kind == 'ObjectId') {
+      console.error(err.message);
+      return res.status(400).json({ msg: 'Profile not found' })
+    }
     console.error(err.message);
     res.status(500).send('Server Error');
   }
