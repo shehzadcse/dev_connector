@@ -1,4 +1,6 @@
 {
-    "mongoURI":"mongodb+srv://shehzad_rana:shehzad123@cluster0.nkiky.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "jwtSecret":"mysecrettoken"
+    "mongoURI": "mongodb+srv://shehzad_rana:shehzad123@cluster0.nkiky.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "ae2c3cf34035cd446c0e",
+    "githubClientSecret": "18d46cc838c89783effc51f7a5c2ce92086c9ddf "
 }
